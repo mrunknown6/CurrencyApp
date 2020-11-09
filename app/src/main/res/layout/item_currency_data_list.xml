@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="currencyData"
+            type="com.example.currencyapp.models.CurrencyData" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvAbbr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{currencyData.abbr}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{currencyData.title}"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:id="@+id/tvToGel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{currencyData.toGel.toString()}"
+                android:textSize="15sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivChange"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:setBitmap="@{currencyData.changeBitmap}"
+                    />
+
+                <TextView
+                    android:id="@+id/tvChange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{currencyData.change.toString()}"
+                    android:textSize="15sp"
+                    android:paddingHorizontal="5dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
